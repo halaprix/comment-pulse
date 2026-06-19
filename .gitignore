@@ -1,0 +1,19 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+coverage/
+*.log
+*.sqlite
+*.db
+imports/
+exports/
+.beads/issues.jsonl
+.beads/interactions.jsonl
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+.beads-credential-key
