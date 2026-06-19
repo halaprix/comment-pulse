@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required files
+        run: |
+          test -f README.md
+          test -f SPEC.md
+          test -f AGENTS.md
+          test -f LICENSE
+          test -f CONTRIBUTING.md
+          test -f SECURITY.md
+      - name: Basic public-safety scan
+        run: |
+          test ! -f .env
+          test ! -d imports
+          test ! -d exports
