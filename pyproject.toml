@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commentpulse"
+version = "0.1.0-alpha.1"
+description = "Turn creator comments into traceable audience pain points and content ideas."
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.11"
+dependencies = [
+    "flask>=3.0",
+    "scikit-learn>=1.4",
+    "numpy>=1.26",
+]
+
+[project.scripts]
+commentpulse = "commentpulse.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+commentpulse = ["templates/*.html", "static/*"]
